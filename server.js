@@ -11,9 +11,10 @@ http.createServer((request, response) => {
   filePath = '';
 
 //creation of fs and logging requests
-fs.appendFile('log.txt', 'URL: ' + addr + '\nTimestamp:  ' + new Date()
+fs.appendFile('log.txt', 'url: ' + addr + '\nTimestamp:  ' + new Date()
 + '\n\n', (err) => {
-    if (err) {
+    if (err) 
+    {
     console.log(err);
   } else {console.log('Added to log!');
   }
@@ -33,4 +34,4 @@ fs.readFile(filePath, (err, data) => {
   });
 }).listen(8080);
 
-console.log('My first Node test server is running on Port 8080.');
+console.log('My node test server is running on Port 8080.');
