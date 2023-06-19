@@ -1,1 +1,87 @@
-this is a log for requests.
+this is a log for requests.url: /
+Timestamp:  Sun Jun 18 2023 15:43:22 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:43:22 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 15:43:22 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Sun Jun 18 2023 15:43:58 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:43:58 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 15:43:58 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Sun Jun 18 2023 15:48:03 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:48:03 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 15:48:03 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Sun Jun 18 2023 15:48:13 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:48:13 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Sun Jun 18 2023 15:48:32 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:48:32 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 15:48:32 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Sun Jun 18 2023 15:54:05 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:54:05 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 15:54:11 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Sun Jun 18 2023 15:58:52 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 15:58:52 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 15:59:59 GMT+0200 (Central European Summer Time)
+
+url: /documentation
+Timestamp:  Sun Jun 18 2023 16:01:02 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Sun Jun 18 2023 16:01:03 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Sun Jun 18 2023 16:01:03 GMT+0200 (Central European Summer Time)
+
+url: /
+Timestamp:  Mon Jun 19 2023 12:24:01 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Mon Jun 19 2023 12:24:01 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Mon Jun 19 2023 12:24:11 GMT+0200 (Central European Summer Time)
+
+url: /documentation
+Timestamp:  Mon Jun 19 2023 12:24:32 GMT+0200 (Central European Summer Time)
+
+url: /img/logomy.jpeg
+Timestamp:  Mon Jun 19 2023 12:24:32 GMT+0200 (Central European Summer Time)
+
+url: /favicon.ico
+Timestamp:  Mon Jun 19 2023 12:24:32 GMT+0200 (Central European Summer Time)
+
