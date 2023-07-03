@@ -2,15 +2,77 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=" 1.0>
-    <title>Documentation Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=" 1.0>
+  <title>Documentation Page</title>
 </head>
-  <h1>This is some documentation concerning the API for the My Movie application</h1>
+<h1>This is some documentation concerning the API for the My Movie application</h1>
 <header> <img class="logo" src="./img/logomy.jpeg" alt="a personallogo of Guy Davis with text in uppercase letters">
 </header>
 
-<body></body>
+<body>
+  <table>
+    <tr>
+      <th>Request</th>
+      <th>URL</th>
+      <th>Response</th>
+      <th>information</th>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies</td>
+      <td>A list of all movies is sent</td>
+      <td>json list of movie names</td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/film_info</td>
+      <td>Data relavent to an individual movie</td>
+      <td>description, genre, director and movie image</td>
+    </tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/genres</td>
+      <td>Data about movie genres returned to user</td>
+      <td>Text descriptions of genres</td>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/directors</td>
+      <td>Data about movie director returned to user</td>
+      <td>Text file of director biography</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>localhost:8080/movies/users</td>
+      <td>Message verification of register</td>
+      <td>Allowing new users to register their details</td>
+    </tr>
+    <tr>
+      <td>PUT</td>
+      <td>localhost:8080/movies/username</td>
+      <td>Message verification of changes</td>
+      <td>Allowing users to update their username information</td>
+    </tr>
+    <tr>
+      <td>POST</td>
+      <td>localhost:8080/movies/add_movie</td>
+      <td>Message verification of added movie</td>
+      <td>Allowing users to add a movie to list of favorites</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>localhost:8080/movies/remove_movie</td>
+      <td>Message verification of removed movie</td>``
+      <td>Allowing users to remove a movie from their list of favorites</td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>localhost:8080/movies/remove_user</td>
+      <td>Message verification of de-register</td>
+      <td>Allowing users to de-register from the API</td>
+    </tr>
+  </table>
+</body>
 <main></main>
 <footer></footer>
+
 </html>
