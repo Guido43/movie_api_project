@@ -98,26 +98,31 @@ app.post('/users', (req, res) => {
       });
   });
 
-  //Update a user by their username(Update)
-  app.put('/users/:username', (req, res) => {
-    Users.findOneAndUpdate({ username: req.params.username }, { $set:
-      {
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email,
-        birthday: req.body.birthday
-      }
-    },
-    { new: true }) 
-    .then((updatedUser) => {res.status(201).json(updatedUser);
-    
-  })
-    .catch((error) => {
-      consol.error(error);
-      res.status(500).send('Error: ' +  username  + ' user was not updated ' + error);
-    });
-  });
+
   
+//Update a user by their username(Update)
+app.put('/users/:username', (req, res) => {
+  Users.findOneAndUpdate({ username: req.params.username }, { $set:
+    {
+      username: req.body.username,
+      password: req.body.password,
+      email: req.body.email,
+      birthday: req.body.birthday
+    }
+  },
+  { new: true }) 
+  .then((updatedUser) => {
+    if (!updatedUser) {
+      return res.status(400).send('Error: This user does not exist');
+    } else {res.json(updatedUser + 'This user\'s profile was updated');
+    }
+  })
+  .catch((error) => {
+    consol.error(error);
+    res.status(500).send('Error: ' +  username  + ' user was not updated ' + error);
+  });
+});
+
 
 
 // Delete a user by username(Delete)
@@ -125,7 +130,7 @@ app.delete('/users/:username', (req, res) => {
   Users.findOneAndRemove({ username: req.params.username })
     .then((user) => {
       if (!user) {
-        res.status(400).send(req.params.username + ' user was not found');
+        res.status(404).send(req.params.username + ' user was not found');
       } else {
         res.status(201).send(req.params.username + ' user was deleted.');
       }
@@ -143,7 +148,7 @@ app.get('/movies/:Title', (req, res) => {
   Movies.findOne({Title: req.params.Title})
     .then((movie) => {
       if (!movie) {
-        res.status(400).send(req.params.Title + ' , This movie was not found');
+        res.status(404).send(req.params.Title + ' , This movie was not found');
       } else {
       res.status(200).json(movie);}
     })
@@ -156,11 +161,11 @@ app.get('/movies/:Title', (req, res) => {
 
 
 //returning movies of a specific genre by genre name(Read)
-app.get('/movies/genre/:Genre', (req, res) => {
+app.get('/movies/genres/:Genre', (req, res) => {
   Movies.find({'Genre.Name': req.params.Genre})
   .then((genre) => {
     if (genre.length == false) {
-    res.status(400).send(req.params.Genre + ' , This genre was not found');
+    res.status(404).send(req.params.Genre + ' , This genre was not found');
     } else {
     res.status(200).json(genre);}
   })
@@ -173,11 +178,11 @@ app.get('/movies/genre/:Genre', (req, res) => {
 
 
 //returning movies by a specific director by director name(Read)
-app.get('/movies/director/:Director', (req, res) => {
+app.get('/movies/directors/:Director', (req, res) => {
   Movies.find({'Director.Name': req.params.Director})
   .then((Director) => {
     if (Director.length == false) {
-      return res.status(400).send('Error ' + req.params.Director + ' , This Director was not found');
+      return res.status(404).send('Error ' + req.params.Director + ' , This Director was not found');
     } else {
       res.status(200).json(Director);}
   })
