@@ -11,65 +11,242 @@
 </header>
 
 <body>
-  <table>
-    <tr>
+  <table style="border: 1px solid black">
+    <tr style="border: 1px solid black">
       <th>Request</th>
       <th>URL</th>
       <th>Response</th>
       <th>information</th>
     </tr>
-    <tr>
+    <tr style="border: 1px solid black">
       <td>GET</td>
       <td>localhost:8080/movies</td>
-      <td>A list of all movies is sent</td>
-      <td>json list of movie names</td>
+      <td>Enables client to obtain a list of all movies available</td>
+      <td style="border: 1px solid black">Returns an Array of JSON objects including Title, Description, Image and
+        information
+        about the Movie, its Genre,
+        Actors and the Directon in the following format.
+        <br>[{ "Genre": {"Name": "",
+        <br> "Description": "",
+        <br> }
+        <br> "Director" {"Name": "",
+        <br> "Bio": "",
+        <br> "Birth: "",
+        <br> "Death: "",}
+        <br> "_id": "",
+        <br> "Title": "",
+        <br> "Description": "",
+        <br> "ImagePath": "",
+        <br> "Actors": []
+        <br> "Featured": Boolean
+        },
+        ]
+      </td>
     </tr>
     <tr>
       <td>GET</td>
-      <td>localhost:8080/movies/film_info</td>
-      <td>Data relavent to an individual movie</td>
-      <td>description, genre, director and movie image</td>
+      <td>localhost:8080/users</td>
+      <td>Enables ability to see a list of all users currently stored</td>
+      <td style="border: 1px solid black">JSON Object returned including the username, password, email, birthdate and
+        favorite movies in the following format:
+        <br>{"_id": "",
+        <br> "username": "",
+        <br> "password": "",
+        <br> "email", "",
+        <br> "birthday": "",
+        <br> "favoritemovies": ["",""],
+        }
+      </td>
     </tr>
-      <td>GET</td>
-      <td>localhost:8080/movies/genres</td>
-      <td>Data about movie genres returned to user</td>
-      <td>Text descriptions of genres</td>
-    <tr>
-      <td>GET</td>
-      <td>localhost:8080/movies/directors</td>
-      <td>Data about movie director returned to user</td>
-      <td>Text file of director biography</td>
-    </tr>
+    <td>GET</td>
+    <td>localhost:8080/users/:username</td>
+    <td>Enables ability to search for the details of a user by their username</td>
+    <td style="border: 1px solid black">JSON Object returned with the users' details in the following format:
+      <br> {"_id": "",
+      <br> "username": "",
+      <br> "password": "",
+      <br> "email", "",
+      <br> "birthday": "",
+      <br> "favoritemovies": ["",""],
+      }
+    </td>
     <tr>
       <td>POST</td>
-      <td>localhost:8080/movies/users</td>
-      <td>Message verification of register</td>
-      <td>Allowing new users to register their details</td>
+      <td>localhost:8080/users</td>
+      <td>Enables client to create a new user with information to be stored</td>
+      <td style="border: 1px solid black">JSON Object returned confirming the information entered
+        in the following format:
+        <br> {"username": "",
+        <br> "password": "",
+        <br> "email", "",
+        <br> "birthday": "",
+        <br> "favoritemovies": ["",""]
+        <br> "_id": "",
+        }
+      </td>
     </tr>
     <tr>
       <td>PUT</td>
-      <td>localhost:8080/movies/username</td>
-      <td>Message verification of changes</td>
-      <td>Allowing users to update their username information</td>
+      <td>localhost:8080/users/:username</td>
+      <td>Enables client to update an element of the users current stored information;
+        username, password, email or birthday.</td>
+      <td style="border: 1px solid black">JSON Object returned confirming the updated information
+        in the following format:
+        <br> "{\n _id: new ObjectId(\"\"),
+        <br> \n username: "",
+        <br> \n password: "",
+        <br> \n email: "",
+        <br> \n birthday: 0000-00-00T00:00:00.000Z,
+        <br> \n favoritemovies: [],
+        } + Message TEXT This user's profile was updated"
+      </td>
+    </tr>
+    <tr>
+      <td>DELETE</td>
+      <td>localhost:8080/users/:username</td>
+      <td>Enables client to delete a user currently stored.</td>
+      <td style="border: 1px solid black">Message TEXT returned confirming the user was deleted
+        in the following format:
+        <br> 'username' + 'user was deleted'
+      </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/:Title</td>
+      <td>Enables a client to search for a movie's details by its Title</td>
+      <td style="border: 1px solid black">JSON Object returned with the Movie's full details in the
+        following format:
+        <br> { "Genre": {"Name": "",
+        <br> "Description": "",
+        <br> }
+        <br> "Director" {"Name": "",
+        <br> "Bio": "",
+        <br> "Birth: "",
+        <br> "Death: "",}
+        <br> "_id": "",
+        <br> "Title": "",
+        <br> "Description": "",
+        <br> "ImagePath": "",
+        <br> "Actors": []
+        <br> "Featured": Boolean}
+      </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/genres/:Genre</td>
+      <td>Enables client to search for movies from a specific genre</td>
+      <td style="border: 1px solid black">Returns an Array of JSON Objects of movies from a specific genre
+        in the following format:
+        <br>[{ "Genre": {"Name": "",
+        <br> "Description": "",
+        <br> }
+        <br> "Director" {"Name": "",
+        <br> "Bio": "",
+        <br> "Birth: "",
+        <br> "Death: "",}
+        <br> "_id": "",
+        <br> "Title": "",
+        <br> "Description": "",
+        <br> "ImagePath": "",
+        <br> "Actors": []
+        <br> "Featured": Boolean
+        },]
+      </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/directors/:Director</td>
+      <td>Enables client to get the details of any movies from a specific director</td>``
+      <td style="border: 1px solid black">Returns a JSON Object, or an Array of JSON Obects depending on whether the
+        director has directed one or multiple movies in the database, returned in the following format:
+        <br>[{ "Genre": {"Name": "",
+        <br> "Description": "",
+        <br> }
+        <br> "Director" {"Name": "",
+        <br> "Bio": "",
+        <br> "Birth: "",
+        <br> "Death: "",}
+        <br> "_id": "",
+        <br> "Title": "",
+        <br> "Description": "",
+        <br> "ImagePath": "",
+        <br> "Actors": []
+        <br> "Featured": Boolean
+        },]
+      </td>
+    </tr>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/actors/:Actors</td>
+      <td>Enables client to get the details of any movies starred in by specific actors</td>
+      <td style="border: 1px solid black">Returns a JSON Array of Objects returning the details of the
+        movies in which a certain actor has starred in the following format:
+        <br>[{ "Genre": {"Name": "",
+        <br> "Description": "",
+        <br> }
+        <br> "Director" {"Name": "",
+        <br> "Bio": "",
+        <br> "Birth: "",
+        <br> "Death: "",}
+        <br> "_id": "",
+        <br> "Title": "",
+        <br> "Description": "",
+        <br> "ImagePath": "",
+        <br> "Actors": []
+        <br> "Featured": Boolean
+        },]
+      </td>
+    </tr>
+    <td>GET</td>
+    <td>localhost:8080/movies/director_name/:Director</td>
+    <td>Enables client to recieve just the specific information about the named director, Name, Biography, Birth
+      and Death dates.</td>
+    <td style="border: 1px solid black">Returns a JSON Object of the relevant information
+      in the following format:
+      <br> {"Name": "",
+      <br> "Bio": "",
+      <br> "Birth: "",
+      <br> "Death: "",}
+    </td>
+    <tr>
+      <td>GET</td>
+      <td>localhost:8080/movies/genre_name/:Genre</td>
+      <td>Enables client to recieve just the specific information about the named Genre, Name, Biography, Birth
+        and Death dates.</td>
+      <td style="border: 1px solid black">Returns a JSON Object of the relevant information
+        in the following format:
+        <br> {"Name": "",
+        <br> "Description": "",}
+      </td>
     </tr>
     <tr>
       <td>POST</td>
-      <td>localhost:8080/movies/add_movie</td>
-      <td>Message verification of added movie</td>
-      <td>Allowing users to add a movie to list of favorites</td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td>localhost:8080/movies/remove_movie</td>
-      <td>Message verification of removed movie</td>``
-      <td>Allowing users to remove a movie from their list of favorites</td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td>localhost:8080/movies/remove_user</td>
-      <td>Message verification of de-register</td>
-      <td>Allowing users to de-register from the API</td>
-    </tr>
+      <td>localhost:8080/users/:username/movies/:movieID</td>
+      <td>Enables a client to add a movie to a user's list of favorite movies</td>
+      <td style="border: 1px solid black">Returns a JSON Obejct with the user's relevant information profile
+        showing that the movie's id number was added to the Array of favorite movies in the following format:
+        <br> {"_id": "",
+        <br> "username": "",
+        <br> "password": "",
+        <br> "email", "",
+        <br> "birthday": "",
+        <br> "favoritemovies": ["",""]}
+      </td>
+  </tr>
+  <tr>
+    <td>DELETE</td>
+    <td>localhost:8080/users/:username/movies/:movieID</td>
+    <td>Enables a client to remove a movie from a user's list of favorite movies</td>
+    <td style="border: 1px solid black">Returns a JSON Obejct with the user's relevant information profile
+      showing that the movie's id number was deleted from the Array of favorite movies in the following format:
+      <br> {"_id": "",
+      <br> "username": "",
+      <br> "password": "",
+      <br> "email", "",
+      <br> "birthday": "",
+      <br> "favoritemovies": ["",""]}
+    </td>
+</tr>
   </table>
 </body>
 <main></main>
