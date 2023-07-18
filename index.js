@@ -164,7 +164,7 @@ app.get('/movies/:Title', (req, res) => {
 app.get('/movies/genres/:Genre', (req, res) => {
   Movies.find({'Genre.Name': req.params.Genre})
   .then((genre) => {
-    if (genre.length == false) {
+    if (!genre.length) {
     res.status(404).send(req.params.Genre + ' , This genre was not found');
     } else {
     res.status(200).json(genre);}
@@ -181,7 +181,7 @@ app.get('/movies/genres/:Genre', (req, res) => {
 app.get('/movies/directors/:Director', (req, res) => {
   Movies.find({'Director.Name': req.params.Director})
   .then((Director) => {
-    if (Director.length == false) {
+    if (!Director.length) {
       return res.status(404).send('Error ' + req.params.Director + ' , This Director was not found');
     } else {
       res.status(200).json(Director);}
@@ -196,7 +196,7 @@ app.get('/movies/directors/:Director', (req, res) => {
 app.get('/movies/actors/:Actors', (req, res) => {
   Movies.find({Actors:req.params.Actors})
   .then((movie) => {
-    if (movie.length == false) {
+    if (!movie.length) {
       return res.status(404).send('Error: ' + req.params.Actors + ' , This Actor was not found')
     } else {
     res.status(200).json(movie);
