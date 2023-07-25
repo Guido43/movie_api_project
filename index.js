@@ -14,11 +14,13 @@ const Users = Models.User;
 //const Genre = Models.Genre;
 //const Director = Models.Director;
 
-mongoose.connect('mongodb://localhost:27017/cfDB', { 
+//mongoose.connect('mongodb://localhost:27017/cfDB', 
+mongoose.connect( process.env.CONNECTION_URI,
+{ 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 });
-
+//'mongodb+srv://gbsdpiano:guysflixDataBase@cluster0.9llraqg.mongodb.net/cfDB?retryWrites=true&w=majority'),
 const app = express();
 
 app.use(express.static('public'));
