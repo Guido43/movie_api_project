@@ -53,8 +53,8 @@ app.get('/', (req, res) => {res.send('Welcome to my Movie club');
     //});
 //});
 
-//Get all movies(Read)
-app.get('/movies', passport.authenticate('jwt', { session: false }), (req,res) => {
+//Get all movies(Read) this retturns a list of all movies
+app.get('/movies', (req,res) => {
   Movies.find()
   .then((movies) =>{
     res.status(201).json(movies);
@@ -164,33 +164,6 @@ app.put('/users/:username',
   })
 });
 
-//Update a user by their username(Update)
-//app.put('/users/:username', passport.authenticate('jwt', { 
-  //session: false }), async (req, res) => {
-   
-    
-  //if(req.user.username !== req.params.username) {
-    //return res.status(400).send('Permission Denied');
-  //}  
- 
-  //await Users.findOneAndUpdate({ username: req.params.username }, {
-  //$set:
-    //{
-      //username: req.body.username,
-      //password: req.body.password,
-      //email: req.body.email,
-      //birthday: req.body.birthday
-    //}
-  //},
-  //{ new: true }) 
-  //.then((updatedUser) => {
-    //res.json(updatedUser);
-  //})
-  //.catch((error) => {
-    //consol.error(error);
-    //res.status(500).send('Error: ' +  username  + ' user was not updated ' + error);
-  //})
-//});
 
 // Delete a user by username(Delete)
 app.delete('/users/:username', passport.authenticate('jwt', { session: false}), (req, res) => {
