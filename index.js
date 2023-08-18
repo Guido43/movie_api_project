@@ -9,8 +9,8 @@ const {check, validationResult} = require('express-validator');
 const fs = require('fs');
 
 
-mongoose.connect('mongodb://localhost:27017/cfDB', 
-//mongoose.connect( process.env.CONNECTION_URI,
+//mongoose.connect('mongodb://localhost:27017/cfDB', 
+mongoose.connect( process.env.CONNECTION_URI,
 { 
   useNewUrlParser: true, 
   useUnifiedTopology: true, 
@@ -345,7 +345,7 @@ passport.authenticate('jwt', { session: false}), (req, res) => {
 
 
 //documentation file from 'public' folder
-//app.use(express.static('public'));
+
 
 //error handler for app
 app.use((err,req,res,next) => {console.error(err.stack);
@@ -354,9 +354,9 @@ res.status(500).send('Something broke!');
 
 
 //const port = process.env.PORT || 8080;
-app.listen(8080, () => {console.log('Your appis listening on port 8080.');
-});
-//const port = process.env.PORT || 8080;
-//app.listen(port, '0.0.0.0',() => {
- //console.log('Listening on Port ' + port);
+//app.listen(8080, () => {console.log('Your appis listening on port 8080.');
 //});
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0',() => {
+ console.log('Listening on Port ' + port);
+});
