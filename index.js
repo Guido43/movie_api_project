@@ -47,7 +47,7 @@ app.get('/', (req, res) => {res.send('Welcome to my Movie club');
 
 
 //Get all movies(Read) this retturns a list of all movies
-app.get('/movies',
+app.get('/movies', passport.authenticate('jwt', { session: false}),
 (req, res) => {
   Movies.find()
   .then((movies) => {
