@@ -10,11 +10,11 @@ const fs = require('fs');
 
 
 //mongoose.connect('mongodb://localhost:27017/cfDB', 
-mongoose.connect( process.env.CONNECTION_URI,
+mongoose.connect(process.env.CONNECTION_URI,
 { 
   useNewUrlParser: true, 
   useUnifiedTopology: true, 
-  family: 4
+
 });
 //'mongodb connection to mongoose schema
 const app = express(),
